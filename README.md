@@ -7,8 +7,6 @@
 * Can Contract exist without an Organization? No
 * Can Organization exist without a Contract? Yes
 
-> Contract To Organization is 1 : M 
-
 ##### Data Modeling using Document reference
 
 ```json
