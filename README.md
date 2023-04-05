@@ -17,11 +17,11 @@
     "arabic_name": String,
     "english_name": String,
     "state": String,
-    "active_status": Boolean
+    "active_status": Boolean,
   },
   "contracts": {
     "_id": ObjectId,
-    "program_type": [String],
+    "program_type": String,
     "organization_id": ObjectId (reference to organizations collection),
     "date": Date,
     "beneficiary": String,
@@ -29,6 +29,7 @@
      "contact_info": [
       {
         "name": String,
+        "job_title": String,
         "phone": String,
         "email": String
       }
@@ -41,11 +42,18 @@
 ---
 * End Points
 
-| Method         | Route     | Description   |
+| Method         | Route     | Description                       |
 |--------------|-----------|------------|
-| Get          | /organizations      | return all available orgs        |
-| Post      | /organizations  | create a new org       |
-| Put      | /organizations/id  | edit an existing org      |
-| Delete      | /organizations/id  | delete an existing org      |
-| Get      | /organizations/id  | return an indivdaul org       |
+| Get          | /organizations      | return all available orgs  |
+| Post         | /organizations  | create a new org               |
+| Put          | /organizations/id  | edit an existing org        |
+| Delete       | /organizations/id  | delete an existing org      |
+| Get          | /organizations/id  | return an indivdaul org     |
+| Get          | /organizations/id/contracts  | return all contracts for an org    |
+| Get          | /organizations/id/contracts/contradID  | return an indivdaul contract for an org     |
+| Get          | /contracts         | return all contracts     |
+| Get          | /contracts/id       | return an indivdaul contract     |
+| Post         | /contracts        | create a new contract     |
+| Put          | /contracts/id  | update an indivdaul contract     |
+| Delete          | /contracts/id  | remove an indivdaul contract     |
 

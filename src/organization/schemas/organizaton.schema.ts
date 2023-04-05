@@ -5,7 +5,7 @@ import { Document } from 'mongoose';
 @Schema({
   timestamps: true,
 })
-export class Organization {
+export class Organization extends Document {
 
   @Prop()
   arabicName: string;
