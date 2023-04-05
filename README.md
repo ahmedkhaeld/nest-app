@@ -38,7 +38,7 @@
   "programs":{
     "_id": ObjectId,
     "type": String,
-    "name": String
+    "description": String
   }
 }
 
