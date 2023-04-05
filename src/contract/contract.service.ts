@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import {Model} from 'mongoose';
 import {Contract} from './schemas/contract.schema';
+import { CreateContractDto } from './dto/create-contract.dto';
+import { UpdateContractDto } from './dto/update-contract.dto';
 
 
 @Injectable()
@@ -13,7 +15,7 @@ export class ContractService {
         return this.contractModel.find();
     }
 
-    async create(contract: Contract): Promise<Contract> {
+    async create(contract: CreateContractDto): Promise<Contract> {
         const res=await this.contractModel.create(contract);
         return res;
     }
@@ -47,7 +49,7 @@ export class ContractService {
         return c;
     }
 
-    async update(id:string,contract: Contract): Promise<Contract> {
+    async update(id:string,contract: UpdateContractDto): Promise<Contract> {
     
         return await this.contractModel.findByIdAndUpdate(id,contract,{
             new:true,

@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { OrganizationModule } from './organization/organization.module';
 import { ContractModule } from './contract/contract.module';
+import { ProgramModule } from './program/program.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { ContractModule } from './contract/contract.module';
     MongooseModule.forRoot(process.env.DB_URI),
     OrganizationModule,
     ContractModule,
+    ProgramModule,
   ],
   controllers: [AppController],
   providers: [AppService],

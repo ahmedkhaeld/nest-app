@@ -34,6 +34,11 @@
         "email": String
       }
     ]
+  },
+  "programs":{
+    "_id": ObjectId,
+    "type": String,
+    "name": String
   }
 }
 
@@ -56,4 +61,8 @@
 | Post         | /contracts        | create a new contract     |
 | Put          | /contracts/id  | update an indivdaul contract     |
 | Delete          | /contracts/id  | remove an indivdaul contract     |
+| Get          | /programs     | return all programs              |
+| Post         | /programs     | create a new program             |
+| Put          | /programs/id  | update an indivdaul program     |
+| Delete       | /programs/id  | remove an indivdaul program     |
 

@@ -1,6 +1,8 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { ContractService } from './contract.service';
 import { Contract } from './schemas/contract.schema';
+import { CreateContractDto } from './dto/create-contract.dto';
+import { UpdateContractDto } from './dto/update-contract.dto';
 
 @Controller('contracts')
 export class ContractController {
@@ -18,12 +20,12 @@ export class ContractController {
 
     
     @Post()
-    async create(@Body() contract: Contract):Promise<Contract> {
+    async create(@Body() contract: CreateContractDto):Promise<Contract> {
         return this.contractService.create(contract);
     }
 
     @Put(':id')
-    async update(@Param('id') id:string,@Body() contract: Contract):Promise<Contract> {
+    async update(@Param('id') id:string,@Body() contract: UpdateContractDto):Promise<Contract> {
         return this.contractService.update(id,contract);
     }
 
