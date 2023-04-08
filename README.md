@@ -17,7 +17,7 @@
     "arabic_name": String,
     "english_name": String,
     "state": String,
-    "active_status": Boolean,
+    "active": Boolean,
   },
   "contracts": {
     "_id": ObjectId,
@@ -26,7 +26,7 @@
     "date": Date,
     "beneficiary": String,
     "description": String,
-     "contact_info": [
+     "contacts": [
       {
         "name": String,
         "job_title": String,

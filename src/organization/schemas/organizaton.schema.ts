@@ -7,20 +7,27 @@ import { Document } from 'mongoose';
 })
 export class Organization extends Document {
 
-  @Prop()
+  @Prop({ required: true })
   arabicName: string;
 
-  @Prop()
+  @Prop({ required: true })
   englishName: string;
 
-  @Prop()
+  @Prop({ required: true })
   state: string;
 
 
-  @Prop()
+  @Prop({ required: true })
   active: boolean;
 
   
 }
 
 export const OrganizationSchema = SchemaFactory.createForClass(Organization);
+
+OrganizationSchema.index({ arabicName: 1, englishName: 1 }, { unique: true });
+
+OrganizationSchema.index({state:1})
+
+
+
